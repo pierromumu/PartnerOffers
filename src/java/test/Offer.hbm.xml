@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="test.Offer" table="offer">
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="title" column="title" type="string"/>
+      <property name="location" column="location" type="string"/>
+      <property name="missionStatement" column="mission_statement" type="string"/>
+      <property name="details" column="details" type="string"/>
+      <property name="profile" column="profile" type="string"/>
+      <property name="contactInformations" column="contact_informations" type="string"/>
+   </class>
+</hibernate-mapping>
