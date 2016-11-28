@@ -2,5 +2,9 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/PartnerOffers/offersComService?wsdl" uri="src/conf/xml-resources/web-service-references/offersComService/wsdl/localhost_8080/PartnerOffers/offersComService.wsdl"/>
     <system systemId="http://localhost:8080/PartnerOffers/offersComService?xsd=1" uri="src/conf/xml-resources/web-service-references/offersComService/wsdl/localhost_8080/PartnerOffers/offersComService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/PartnerOffers/offersSoapWSService?wsdl" uri="src/conf/xml-resources/web-service-references/offersSoapWSService/wsdl/localhost_8080/PartnerOffers/offersSoapWSService.wsdl"/>
+    <system systemId="http://localhost:8080/PartnerOffers/offersSoapWSService?xsd=1" uri="src/conf/xml-resources/web-service-references/offersSoapWSService/wsdl/localhost_8080/PartnerOffers/offersSoapWSService.xsd_1.xsd"/>
 </catalog>
+
+
 

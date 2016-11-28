@@ -1,5 +1,7 @@
 package test;
 
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Iterator;
 
@@ -13,9 +15,9 @@ public class ManageOffer {
 
     public SessionFactory factory;
 
-    public ManageOffer(){
+    public ManageOffer(int num){
        try{
-           factory = new Configuration().configure("test/hibernate.cfg.xml").buildSessionFactory();
+           factory = new Configuration().configure("test/hibernateP"+num+".cfg.xml").buildSessionFactory();
        }catch (Throwable ex) {
            System.err.println("Failed to create sessionFactory object." + ex);
            throw new ExceptionInInitializerError(ex);
@@ -23,13 +25,13 @@ public class ManageOffer {
     }
 
     // CREATE
-    public Integer addOffer(String t, String l, String m, String d, String p, String c){
+    public Integer addOffer(String en, Date dc, Date db, int le, String af, String ti, int ac, String lo, String ms, int pa, String de, String pr, String ci){
       Session session = factory.openSession();
       Transaction tx = null;
       Integer offerID = null;
       try{
          tx = session.beginTransaction();
-         Offer offer = new Offer(t, l, m, d, p, c);
+         Offer offer = new Offer(en, dc, db, le, af, ti, ac, lo, ms, pa, de, pr, ci);
          offerID = (Integer) session.save(offer);
          tx.commit();
       }catch (HibernateException e) {
@@ -77,17 +79,22 @@ public class ManageOffer {
     }
 
     public static void main(String args[]) {
-        ManageOffer MO = new ManageOffer();
+        ManageOffer MO1 = new ManageOffer(1);
+        ManageOffer MO2 = new ManageOffer(2);
+        
+        List offers1 = MO1.listOffers();
+        for (Iterator iterator = offers1.iterator(); iterator.hasNext();){
+            MO1.deleteOffer((Offer) iterator.next());
+        }
+        List offers2 = MO2.listOffers();
+        for (Iterator iterator = offers2.iterator(); iterator.hasNext();){
+            MO2.deleteOffer((Offer) iterator.next());
+        }
 
-        // adding an entry
-        Integer offID1 = MO.addOffer("t1", "l1", "m1", "d1", "p1", "c1");
-        Integer offID2 = MO.addOffer("t2", "l2", "m2", "d2", "p2", "c2");
-
-        /*List offers = MO.listOffers();
-        for (Iterator iterator = offers.iterator(); iterator.hasNext();){
-            MO.deleteOffer((Offer) iterator.next());
-            //System.out.println((Offer) iterator.next());
-        }*/
+        // adding entries
+        Date d = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+        Integer off1ID = MO1.addOffer("en1", d, d, 0, "af1", "ti1", 0, "lo1", "ms1", 0, "de1", "pr1", "ci1");
+        Integer off2ID = MO2.addOffer("en2", d, d, 0, "af2", "ti2", 0, "lo2", "ms2", 0, "de2", "pr2", "ci2");
     }
 
 }

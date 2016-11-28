@@ -11,8 +11,8 @@
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </taskdef>
     </target>
-    <target name="wsgen-offersCom" depends="wsgen-init">
-        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" xendorsed="true" keep="true" genwsdl="true" sei="test.offersCom">
+    <target name="wsgen-offersSoapWS" depends="wsgen-init">
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" xendorsed="true" keep="true" genwsdl="true" sei="test.offersSoapWS">
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </wsgen>
     </target>
@@ -25,21 +25,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-offersComService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/offersComService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/offersComService" destdir="${build.generated.dir}/jax-wsCache/offersComService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/offersComService/wsdl/localhost_8080/PartnerOffers/offersComService.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/PartnerOffers/offersComService?wsdl" xnocompile="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/offersComService/wsdl/localhost_8080/PartnerOffers/offersComService.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/offersComService"/>
+    <target name="wsimport-client-offersSoapWSService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/offersSoapWSService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/offersSoapWSService" destdir="${build.generated.dir}/jax-wsCache/offersSoapWSService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/offersSoapWSService/wsdl/localhost_8080/PartnerOffers/offersSoapWSService.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/PartnerOffers/offersSoapWSService?wsdl" xnocompile="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/offersSoapWSService/wsdl/localhost_8080/PartnerOffers/offersSoapWSService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/offersSoapWSService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/offersComService">
+            <fileset dir="${build.generated.dir}/jax-wsCache/offersSoapWSService">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-offersComService" depends="-init-project">
+    <target name="wsimport-client-clean-offersSoapWSService" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/test"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/offersComService"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/offersSoapWSService"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-offersComService"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-offersSoapWSService"/>
 </project>

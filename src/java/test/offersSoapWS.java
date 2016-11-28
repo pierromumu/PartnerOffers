@@ -12,19 +12,14 @@ import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-/**
- *
- * @author pierre
- */
-
 @WebService()
-public class offersCom {
+public class offersSoapWS {
 
     @WebMethod(operationName = "getOffers")
     public String getOffers() {
 
-        ManageOffer MO = new ManageOffer();
-        List<Offer> temp = MO.listOffers();
+        ManageOffer MO1 = new ManageOffer(1);
+        List<Offer> temp = MO1.listOffers();
 
         return new Gson().toJson(temp);
     }
