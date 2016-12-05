@@ -93,8 +93,43 @@ public class ManageOffer {
 
         // adding entries
         Date d = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-        Integer off1ID = MO1.addOffer("en1", d, d, 0, "af1", "ti1", 0, "lo1", "ms1", 0, "de1", "pr1", "ci1");
-        Integer off2ID = MO2.addOffer("en2", d, d, 0, "af2", "ti2", 0, "lo2", "ms2", 0, "de2", "pr2", "ci2");
+        
+        String enterprise1 = "Squadeo";
+        String activityField1 = "Informatique";
+        int length1a = 170;
+        int length1b = 180;
+        int areaCode1a = 31;
+        int areaCode1b = 75;
+        String title1a = "Evaluation of Watermarking Technologies";
+        String title1b = "Developpement d'une solution 360° Video";
+        String location1a = "Toulouse";
+        String location1b = "Paris";
+        String missionStatement1a = "A COMPLETER";
+        String missionStatement1b = "A COMPLETER";
+        int pay1a = 700;
+        int pay1b = 600;
+        String details1a = "A COMPLETER";
+        String details1b = "A COMPLETER";
+        String profile1a = "A COMPLETER";
+        String profile1b = "A COMPLETER";
+        String contactInformations1a = "Gérard Letard, 05 00 00 00 00";
+        String contactInformations1b = "kevinlelin@laposte.fr";
+
+        String enterprise2 = "Solvay";
+        String activityField2 = "Chimie";
+        int length2a = 160;
+        int areaCode2a = 13;
+        String title2a = "Développement de Charges Minérales Hautes Performances pour application plastique";
+        String location2a = "Marseille";
+        String missionStatement2a = "A COMPLETER";
+        int pay2a = 800;
+        String details2a = "A COMPLETER";
+        String profile2a = "A COMPLETER";
+        String contactInformations2a = "Envoyer CV à SOLVAY, SERVICE RECRUTEMENT, LA CAPITAINERIE, 8 RUE JAUBERT 13005 MARSEILLE";
+
+        Integer off1aID = MO1.addOffer(enterprise1, d, d, length1a, activityField1, title1a, areaCode1a, location1a, missionStatement1a, pay1a, details1a, profile1a, contactInformations1a);
+        Integer off1bID = MO1.addOffer(enterprise1, d, d, length1b, activityField1, title1b, areaCode1b, location1b, missionStatement1b, pay1b, details1b, profile1b, contactInformations1b);
+        Integer off2aID = MO2.addOffer(enterprise2, d, d, length2a, activityField2, title2a, areaCode2a, location2a, missionStatement2a, pay2a, details2a, profile2a, contactInformations2a);
     }
 
 }

@@ -72,6 +72,6 @@ public class Offer {
 
     @Override
     public String toString(){
-        return getTitle();
+        return "\""+getTitle()+"\""+" in "+getActivityField()+" created "+getDateCreation().toString()+" by "+getEnterprise()+", beginning "+getDateBeginning().toString()+" and lasting "+getLength()+ " days.";
     }
 }

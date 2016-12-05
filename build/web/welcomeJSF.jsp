@@ -20,27 +20,28 @@
             <%-- start web service invocation --%>
             <%
             try {
-                out.println("Offers"+"<br/>");
+                out.println("Offers from  SOAP & REST"+"<br/>");
 
                 test.OffersSoapWSService service = new test.OffersSoapWSService();
                 test.OffersSoapWS port = service.getOffersSoapWSPort();
                 java.lang.String result = port.getOffers();
-                test.Offer[] converted = new com.google.gson.Gson().fromJson(result, test.Offer[].class);
-
-                out.println("&emsp;"+"from  SOAP (Partner 1) :"+"<br/>");
-                for (test.Offer o : converted){
-                    out.println("&emsp;"+"&emsp;"+o.toString()+"<br/>");
-                }
+                java.util.List<test.Offer> convertedSoap = java.util.Arrays.asList(new com.google.gson.Gson().fromJson(result, test.Offer[].class));
 
                 com.sun.jersey.api.client.Client cl = com.sun.jersey.api.client.Client.create();
                 com.sun.jersey.api.client.WebResource r = cl.resource("http://localhost:8080/PartnerOffers/resources/partnerrest");
                 java.lang.String resuRest = r.get(java.lang.String.class);
-                test.Offer[] convertedRest = new com.google.gson.Gson().fromJson(resuRest, test.Offer[].class);
+                java.util.List<test.Offer> convertedRest = java.util.Arrays.asList(new com.google.gson.Gson().fromJson(resuRest, test.Offer[].class));
 
-                out.println("&emsp;"+"from  REST (Partner 2) :"+"<br/>");
-                for (test.Offer o : convertedRest){
-                    out.println("&emsp;"+"&emsp;"+o.toString()+"<br/>");
-                }
+                java.util.List<test.Offer> convertedConcat = new java.util.ArrayList<test.Offer>(convertedSoap);
+                convertedConcat.addAll(convertedRest);
+                
+                test.SortedOffersList s = new test.SortedOffersList(convertedConcat);
+                s.sortListByPay();
+
+                java.util.Iterator<test.Offer> i = s.getOffers().iterator();
+		while (i.hasNext()) {
+			out.println("&emsp;"+"→ "+i.next().toString()+"<br/>");
+		}
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }
