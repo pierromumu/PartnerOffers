@@ -35,19 +35,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetOffersResponse }
-     * 
-     */
-    public GetOffersResponse createGetOffersResponse() {
-        return new GetOffersResponse();
-    }
-
-    /**
      * Create an instance of {@link GetOffers }
      * 
      */
     public GetOffers createGetOffers() {
         return new GetOffers();
+    }
+
+    /**
+     * Create an instance of {@link GetOffersResponse }
+     * 
+     */
+    public GetOffersResponse createGetOffersResponse() {
+        return new GetOffersResponse();
     }
 
     /**

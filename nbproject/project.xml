@@ -20,10 +20,6 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library>
-                    <file>${file.reference.derbyclient.jar}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library>
                     <file>${libs.MySQLDriver.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
@@ -93,6 +89,10 @@
                 </library>
                 <library>
                     <file>${libs.restlib_gfv2.classpath}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library>
+                    <file>${file.reference.derbyclient.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
