@@ -19,6 +19,7 @@ import javax.ws.rs.Produces;
 
 @Path("partnerrest")
 public class PartnerRest {
+
     @Context
     private UriInfo context;
 

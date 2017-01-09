@@ -1,10 +1,14 @@
 package test;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Iterator;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -79,57 +83,35 @@ public class ManageOffer {
     }
 
     public static void main(String args[]) {
-        ManageOffer MO1 = new ManageOffer(1);
-        ManageOffer MO2 = new ManageOffer(2);
-        
-        List offers1 = MO1.listOffers();
-        for (Iterator iterator = offers1.iterator(); iterator.hasNext();){
-            MO1.deleteOffer((Offer) iterator.next());
+        ManageOffer MOA = new ManageOffer(1);
+        ManageOffer MOB = new ManageOffer(2);
+
+        // deleting old entries
+        List offersA = MOA.listOffers();
+        for (Iterator iterator = offersA.iterator(); iterator.hasNext();){
+            MOA.deleteOffer((Offer) iterator.next());
         }
-        List offers2 = MO2.listOffers();
-        for (Iterator iterator = offers2.iterator(); iterator.hasNext();){
-            MO2.deleteOffer((Offer) iterator.next());
+        List offersB = MOB.listOffers();
+        for (Iterator iterator = offersB.iterator(); iterator.hasNext();){
+            MOB.deleteOffer((Offer) iterator.next());
         }
 
-        // adding entries
-        Date d = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-        
-        String enterprise1 = "Squadeo";
-        String activityField1 = "Informatique";
-        int length1a = 170;
-        int length1b = 180;
-        int areaCode1a = 31;
-        int areaCode1b = 75;
-        String title1a = "Evaluation of Watermarking Technologies";
-        String title1b = "Developpement d'une solution 360° Video";
-        String location1a = "Toulouse";
-        String location1b = "Paris";
-        String missionStatement1a = "A COMPLETER";
-        String missionStatement1b = "A COMPLETER";
-        int pay1a = 700;
-        int pay1b = 600;
-        String details1a = "A COMPLETER";
-        String details1b = "A COMPLETER";
-        String profile1a = "A COMPLETER";
-        String profile1b = "A COMPLETER";
-        String contactInformations1a = "Gérard Letard, 05 00 00 00 00";
-        String contactInformations1b = "kevinlelin@laposte.fr";
+        // adding new entries
+        Date currentDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
-        String enterprise2 = "Solvay";
-        String activityField2 = "Chimie";
-        int length2a = 160;
-        int areaCode2a = 13;
-        String title2a = "Développement de Charges Minérales Hautes Performances pour application plastique";
-        String location2a = "Marseille";
-        String missionStatement2a = "A COMPLETER";
-        int pay2a = 800;
-        String details2a = "A COMPLETER";
-        String profile2a = "A COMPLETER";
-        String contactInformations2a = "Envoyer CV à SOLVAY, SERVICE RECRUTEMENT, LA CAPITAINERIE, 8 RUE JAUBERT 13005 MARSEILLE";
-
-        Integer off1aID = MO1.addOffer(enterprise1, d, d, length1a, activityField1, title1a, areaCode1a, location1a, missionStatement1a, pay1a, details1a, profile1a, contactInformations1a);
-        Integer off1bID = MO1.addOffer(enterprise1, d, d, length1b, activityField1, title1b, areaCode1b, location1b, missionStatement1b, pay1b, details1b, profile1b, contactInformations1b);
-        Integer off2aID = MO2.addOffer(enterprise2, d, d, length2a, activityField2, title2a, areaCode2a, location2a, missionStatement2a, pay2a, details2a, profile2a, contactInformations2a);
+        try {
+            Integer offId1 = MOA.addOffer(OffersContent.enterprise1, currentDate, new Date(formatter.parse(OffersContent.date1).getTime()), OffersContent.length1, OffersContent.activityField1, OffersContent.title1, OffersContent.areaCode1, OffersContent.location1, OffersContent.missionStatement1, OffersContent.pay1, OffersContent.details1, OffersContent.profile1, OffersContent.contactInformations1);
+            Integer offId2 = MOA.addOffer(OffersContent.enterprise2, currentDate, new Date(formatter.parse(OffersContent.date2).getTime()), OffersContent.length2, OffersContent.activityField2, OffersContent.title2, OffersContent.areaCode2, OffersContent.location2, OffersContent.missionStatement2, OffersContent.pay2, OffersContent.details2, OffersContent.profile2, OffersContent.contactInformations2);
+            Integer offId3 = MOA.addOffer(OffersContent.enterprise3, currentDate, new Date(formatter.parse(OffersContent.date3).getTime()), OffersContent.length3, OffersContent.activityField3, OffersContent.title3, OffersContent.areaCode3, OffersContent.location3, OffersContent.missionStatement3, OffersContent.pay3, OffersContent.details3, OffersContent.profile3, OffersContent.contactInformations3);
+            Integer offId4 = MOA.addOffer(OffersContent.enterprise4, currentDate, new Date(formatter.parse(OffersContent.date4).getTime()), OffersContent.length4, OffersContent.activityField4, OffersContent.title4, OffersContent.areaCode4, OffersContent.location4, OffersContent.missionStatement4, OffersContent.pay4, OffersContent.details4, OffersContent.profile4, OffersContent.contactInformations4);
+            Integer offId5 = MOB.addOffer(OffersContent.enterprise5, currentDate, new Date(formatter.parse(OffersContent.date5).getTime()), OffersContent.length5, OffersContent.activityField5, OffersContent.title5, OffersContent.areaCode5, OffersContent.location5, OffersContent.missionStatement5, OffersContent.pay5, OffersContent.details5, OffersContent.profile5, OffersContent.contactInformations5);
+            Integer offId6 = MOB.addOffer(OffersContent.enterprise6, currentDate, new Date(formatter.parse(OffersContent.date6).getTime()), OffersContent.length6, OffersContent.activityField6, OffersContent.title6, OffersContent.areaCode6, OffersContent.location6, OffersContent.missionStatement6, OffersContent.pay6, OffersContent.details6, OffersContent.profile6, OffersContent.contactInformations6);
+            Integer offId7 = MOB.addOffer(OffersContent.enterprise7, currentDate, new Date(formatter.parse(OffersContent.date7).getTime()), OffersContent.length7, OffersContent.activityField7, OffersContent.title7, OffersContent.areaCode7, OffersContent.location7, OffersContent.missionStatement7, OffersContent.pay7, OffersContent.details7, OffersContent.profile7, OffersContent.contactInformations7);
+        } catch (ParseException ex) {
+            Logger.getLogger(ManageOffer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  
     }
 
 }
