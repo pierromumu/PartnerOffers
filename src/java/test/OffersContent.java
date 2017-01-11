@@ -2,7 +2,7 @@ package test;
 
 public class OffersContent {
 
-    public static String enterprise1 = "Sogeti France";
+    public static String enterprise1 = "Sogeti_France";
     public static String date1 = "2017-03-01";
     public static String activityField1 = "Informatique";
     public static int length1 = 120;
@@ -15,7 +15,7 @@ public class OffersContent {
     public static String profile1 = "<p> Passionné(e) d&#039;informatique, vous suivez actuellement une formation d&#039;ingénieur en Master 2 à l&#039;Université ou en Ecole d&#039;ingénieur et vous possédez une première expérience en développement BI. Les projets sont réalisés dans un contexte Agile, la réussite de cette mission nécessitera donc une certaine aisance relationnelle ainsi que de bonnes aptitudes en matière de communication orale et écrite. <br /> <br /> Vous êtes disponible pour un stage de fin d&#039;étude, d&#039;une durée de 6 mois à temps complet.<br /> <br /> Vous êtes doté(e) d&#039;une personnalité ambitieuse et créative ?<br /> Vous aimez les challenges ?<br /> Vous avez l&#039;esprit d&#039;équipe ? <br /> <br /> Alors, REJOIGNEZ-NOUS !<br /> <br /> Retrouvez-nous sur https://www.facebook.com/#!/MeetSogetiFrance<br /> Et sur http://www.viadeo.com/groups/?containerId=00217tw5f9n70tpy<br /> <br /> Sogeti est signataire de la charte de la diversité en entreprise.<br /> <br /> Du 8 juin au 31 décembre 2016, Sogeti s&#039;associe à Uber pour offrir à ses candidats un service personnalisé leur permettant de se rendre à leurs entretiens de recrutement dans les meilleures conditions ! <br /> Informations et conditions sur : fr.sogeti.com/uber4sogeti<br /> </p>";
     public static String contactInformations1 = "<p>Par Internet : http://sogeti-fra.contactrh.com/jobs/25/16148668</p> <p>Contact : Service recrutement</p>";
 
-    public static String enterprise2 = "Sogeti France";
+    public static String enterprise2 = "Sogeti_France";
     public static String date2 = "2017-07-20";
     public static String activityField2 = "Management";
     public static int length2 = 80;
@@ -28,7 +28,7 @@ public class OffersContent {
     public static String profile2 = "<p> Futur(e) diplômé(e) spécialisé dans le domaine RH, vous avez un intérêt particulier pour le recrutement.<br /> Vos atouts :<br /> -Autonomie,<br /> -Intérêt pour les nouvelles technologies,<br /> -Esprit de synthèse,<br /> -Organisation,<br /> -Très bonne communications (orale et écrite)<br /> Vous êtes doté(e) d&#039;une personnalité ambitieuse et créative ?<br /> Vous aimez les challenges ?<br /> Vous avez l&#039;esprit d&#039;équipe ? <br /> <br /> Alors, REJOIGNEZ-NOUS !<br /> <br /> Retrouvez-nous sur https://www.facebook.com/#!/MeetSogetiFrance<br /> Et sur https://www.linkedin.com/company/sogeti-group?trk=biz-brand-tree-co-name<br /> <br /> Sogeti est signataire de la charte de la diversité en entreprise.<br /> </p>";
     public static String contactInformations2 = "<p>Par Internet : http://sogeti-fra.contactrh.com/jobs/25/16656575</p> <p>Contact : Service recrutement</p>";
 
-    public static String enterprise3 = "Sogeti France";
+    public static String enterprise3 = "Sogeti_France";
     public static String date3 = "2017-02-30";
     public static String activityField3 = "Commerce";
     public static int length3 = 100;
@@ -41,7 +41,7 @@ public class OffersContent {
     public static String profile3 = "<p> Stagiaire en 5ème année, Ecole de Commerce/Université, <br /> - Vous possédez de bonnes connaissances générales en informatique, des systèmes d&#039;information, des architectures et des environnements techniques. <br /> - Vous savez comprendre la demande d&#039;un client et analyser ses besoins.<br /> - Votre esprit d&#039;équipe et votre relationnel vous permettent d&#039;être force de proposition.<br /> - Rigoureux(euse) et curieux(euse) d&#039;esprit, vous avez le souci du résultat et de la performance.<br /> - Vous maîtriser la langue anglaise dans un milieu professionnel.<br /> <br /> Alors, REJOIGNEZ-NOUS!<br /> </p>";
     public static String contactInformations3 = "<p>Par Internet : http://sogeti-fra.contactrh.com/jobs/25/16009985</p> <p>Contact : Service recrutement</p>";
 
-    public static String enterprise4 = "Sogeti France";
+    public static String enterprise4 = "Sogeti_France";
     public static String date4 = "2017-05-11";
     public static String activityField4 = "Informatique";
     public static int length4 = 90;
@@ -54,7 +54,7 @@ public class OffersContent {
     public static String profile4 = "<p> Tout d&#039;abord, il s&#039;agit d&#039;un stage de 4 à 6 mois ou d&#039;un contrat en alternance pour des profils à partir de bac+4.<br /> Tous les stages de dernière année proposés sont des stages de pré-embauche.<br /> <br /> Votre sens du service, votre esprit d&#039;équipe et votre relationnel vous permettent d&#039;être force de proposition. Vous souhaitez évoluer vers des postes à responsabilités dans le conseil et l&#039;intégration de solutions, dans l&#039;infrastructure technique et/ ou fonctionnelle, ou le management de projet ?<br /> <br /> Alors, REJOIGNEZ-NOUS !<br /> </p>";
     public static String contactInformations4 = "<p>Par Internet : http://sogeti-fra.contactrh.com/jobs/25/16011616</p> <p>Contact : Service recrutement</p>";
 
-    public static String enterprise5 = "Sopra Steria";
+    public static String enterprise5 = "Sopra_Steria";
     public static String date5 = "2017-01-22";
     public static String activityField5 = "Informatique";
     public static int length5 = 105;
@@ -67,7 +67,7 @@ public class OffersContent {
     public static String profile5 = "<p> Vous êtes en dernière année d&#039;École d&#039;Ingénieurs ou Master 2 Informatique. <br /> Vous connaissez les technologies Java/J2EE, la modélisation UML et avez des notions en bases de données. <br /> Vous faites preuve d&#039;un bon relationnel, aimez le travail en équipe, êtes rigoureux(se) et autonome. <br /> Vous maîtrisez l&#039;anglais. <br /> <br /> Tous nos postes sont ouverts aux personnes en situation de handicap.<br /> </p>";
     public static String contactInformations5 = "<p>Par email : offre15746451.25@sopra.contactrh.com</p> <p>Contact : Service recrutement</p>";
 
-    public static String enterprise6 = "Sopra Steria";
+    public static String enterprise6 = "Sopra_Steria";
     public static String date6 = "2017-05-01";
     public static String activityField6 = "Management";
     public static int length6 = 25;
@@ -80,7 +80,7 @@ public class OffersContent {
     public static String profile6 = "<p> De formation Bac+4/5 école de commerce ou universitaire, vous recherchez un stage et avez envie de découvrir le domaine du recrutement en ESN. Quotidiennement en relation avec les acteurs ressources humaines et opérationnels, vous avez le sens du service et êtes pro-actif(ve). Vous possédez notamment des capacités d&#039;adaptation, êtes rigoureux(se) et diplomate. Tous nos postes sont ouverts aux personnes en situation de handicap.<br /> </p>";
     public static String contactInformations6 = "<p>Par email : offre16464821.25@sopra.contactrh.com</p> <p>Contact : Service recrutement</p>";
 
-    public static String enterprise7 = "Sopra Steria";
+    public static String enterprise7 = "Sopra_Steria";
     public static String date7 = "2017-02-08";
     public static String activityField7 = "Informatique";
     public static int length7 = 145;
